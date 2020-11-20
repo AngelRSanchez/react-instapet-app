@@ -31,6 +31,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
+    "vercel-build": "npm run build",
     "build": "webpack --config webpack.config.js",
     "dev": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1"
