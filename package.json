@@ -27,7 +27,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-standard": "^4.1.0",
-    "html-webpack-plugin": "^4.5.0",
+    "html-webpack-plugin": "^5.0.0-alpha.9",
     "webpack": "^5.5.1",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0"

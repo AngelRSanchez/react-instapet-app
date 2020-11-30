@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require(require.resolve("html-webpack-plugin", { paths: [process.cwd()] }));
 
 module.exports = {
   mode: 'development',
