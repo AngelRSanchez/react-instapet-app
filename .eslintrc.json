@@ -1,11 +1,9 @@
 {
-    "parser": "babel-eslint",
     "env": {
         "browser": true,
         "es2021": true
     },
     "extends": [
-        "./node_modules/standard/eslintrc.json",
         "eslint:recommended",
         "plugin:react/recommended"
     ],
@@ -20,7 +18,15 @@
         "react"
     ],
     "rules": {
-        "semi": 0,
-        "no-var": "warn"
+        "comma-dangle": "error",
+        "comma-style": "off",
+        "semi": "off",
+        "jsx-quotes": "off",
+        "indent": "off",
+        "no-undef": "off",
+        "no-var": "warn",
+        "react/prop-types": [{
+            "ignore": "ignore"
+        }]
     }
 }

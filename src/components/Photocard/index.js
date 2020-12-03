@@ -41,14 +41,14 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
 
   const Icon = liked ? MdFavorite : MdFavoriteBorder;
 
-  const setLocalStorage = value => {
+  const setLocalStorage = (value) => {
     try {
       window.localStorage.setItem(key, value);
       setLiked(value);
     } catch (e) {
       console.error(e);
     }
-  }
+  };
 
   return (
     <Article ref={element}>
