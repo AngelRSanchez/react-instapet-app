@@ -1,10 +1,12 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
-import { Article, ImgWrapper, Img, Button } from "./styles";
+import { Article, ImgWrapper, Img } from "./styles";
 
-import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
+import { FavButton } from '../FavButton';
+import { ToggleLikeMutation } from '../../container/ToggleLikeMutation';
 
 const DEFAULT_IMAGE =
   "https://res.cloudinary.com/midudev/image/upload/w_150/v1555671700/category_hamsters.jpg";
+
 
 export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
   const element = useRef(null);
@@ -39,8 +41,6 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
     [element]
   );
 
-  const Icon = liked ? MdFavorite : MdFavoriteBorder;
-
   const setLocalStorage = (value) => {
     try {
       window.localStorage.setItem(key, value);
@@ -54,15 +54,33 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
     <Article ref={element}>
       {show && (
         <Fragment>
-          <a href={`/detail/${id}`}>
+          <a href={`/?detail=${id}`}>
             <ImgWrapper>
               <Img src={src} />
             </ImgWrapper>
           </a>
+          <ToggleLikeMutation>
+            {
+              (toggleLike) => {
+                const handleFavClick = () => {
+                  !liked && toggleLike({
+                    variables: {
+                    input: { id }
+                  } });
+                  setLiked(!liked)
+                }
 
-          <Button onClick={() => setLocalStorage(!liked)}>
-            <Icon size="24px" /> {likes} likes!
-          </Button>
+                return (
+                  <FavButton
+                    liked={liked}
+                    likes={likes}
+                    onClick={setLocalStorage}
+                  />
+                );
+              }
+            }
+          </ToggleLikeMutation>
+
         </Fragment>
       )}
     </Article>
