@@ -50,7 +50,7 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
     }
   };
 
-  return (
+  return ( 
     <Article ref={element}>
       {show && (
         <Fragment>
