@@ -6,6 +6,8 @@ import { Home } from './pages/Home';
 
 export const App = () => {
 
+  // Con windows.location.search podemos sacar la query de la barra de busqueda.
+  // Y esto es lo que recive por parametro URLSearchParams
 	const urlParams = new window.URLSearchParams(window.location.search);
 	const detailId = urlParams.get('detail');
 

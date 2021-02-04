@@ -50,7 +50,7 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
     }
   };
 
-  return ( 
+  return (
     <Article ref={element}>
       {show && (
         <Fragment>
@@ -65,16 +65,17 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
                 const handleFavClick = () => {
                   !liked && toggleLike({
                     variables: {
-                    input: { id }
-                  } });
-                  setLiked(!liked)
+                      input: { id }
+                    }
+                  });
+                  setLiked(!liked);
                 }
 
                 return (
                   <FavButton
                     liked={liked}
                     likes={likes}
-                    onClick={setLocalStorage}
+                    onClick={handleFavClick}
                   />
                 );
               }
