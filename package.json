@@ -4,6 +4,7 @@
   "description": "Aplicacion Similar a instagram usando React Js",
   "main": "webpack.config.js",
   "dependencies": {
+    "@reach/router": "^1.3.4",
     "apollo-boost": "^0.4.9",
     "graphql": "^15.4.0",
     "intersection-observer": "^0.11.0",
@@ -40,7 +41,7 @@
   "scripts": {
     "vercel-build": "npm run build",
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack serve",
+    "dev": "webpack serve --history-api-fallback",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

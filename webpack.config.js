@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require(require.resolve("html-webpack-plugin", { paths
 module.exports = {
   mode: 'development',
   output: {
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
+    publicPath: '/'
   },
   devServer: {
     contentBase: './dist'
