@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 import { GlobalStyle } from "./styles/GlobalStyles";
 import { Logo } from "./components/Logo";
+
+import { NavBar } from './components/NavBar';
+
 import { Detail } from './pages/Detail';
 import { Home } from './pages/Home';
 
@@ -13,10 +16,11 @@ export const App = () => {
       <GlobalStyle />
       <Logo />
       <Router>
-            <Home path='/' />
-            <Home path='/pet/:categoryID' />
-            <Detail path='/detail/:detailID' />
-        </Router>
+        <Home path='/' />
+        <Home path='/pet/:categoryID' />
+        <Detail path='/detail/:detailID' />
+      </Router>
+      <NavBar />
     </Fragment>
   );
 };
