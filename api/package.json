@@ -4,7 +4,7 @@
   "description": "Clon de instagram para mascotas. ",
   "main": "index.js",
   "scripts": {
-    "deploy": "now -t 4QPPyBqH5aGzQoKEdH1YxOmU",
+    "deploy": "vercel -t 4QPPyBqH5aGzQoKEdH1YxOmU",
     "start:api": "set NODE_ENV=production node index.js",
     "dev:api": "nodemon index.js --ignore db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,7 @@
   "author": "AngelRSanchez",
   "license": "ISC",
   "dependencies": {
+    "@vercel/node": "^1.9.0",
     "apollo-server-express": "^2.19.0",
     "bcrypt": "^5.0.0",
     "cors": "2.8.5",
