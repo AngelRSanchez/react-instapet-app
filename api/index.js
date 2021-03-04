@@ -13,11 +13,6 @@ const { categories } = require('./db.json')
 
 app.use(cors())
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  next()
-})
-
 // auth middleware
 const auth = jwt({
   secret: process.env.JWT_SECRET,
