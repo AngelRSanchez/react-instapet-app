@@ -5,7 +5,6 @@ import { List, Item } from "./styles";
 
 function useCategoriesData() {
   const [categories, setCategories] = useState([]);
-
   const [loading, setLoading] = useState(false);
 
   useEffect(function () {
@@ -13,7 +12,7 @@ function useCategoriesData() {
     setLoading(true);
 
     window
-      .fetch("https://instapet.angelsanchez.vercel.app/categories")
+      .fetch("https://instapet-angelsanchez.vercel.app/categories")
       .then((res) => res.json())
       .then((response) => {
         setCategories(response);
